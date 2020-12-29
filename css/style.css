@@ -34,6 +34,24 @@ nav{
     background-color: burlywood;
 }
 
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    display: inline;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul li:hover{
+    font-size: 19px;
+    cursor: pointer;
+    color: grey;
+}
+
 .content{
     display: flex;
     flex-direction: column;
