@@ -21,6 +21,10 @@ header{
     background-color: beige;
 }
 
+header img{
+    height: 70px;
+}
+
 nav{
     display: flex;
     justify-content: center;
