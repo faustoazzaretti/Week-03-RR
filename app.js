@@ -137,6 +137,20 @@ clearCp = function () {
     inputCp.value = "";
 }
 
+validateDNI = function () {
+    if (isNaN(inputDNI.value) || inputDNI.value.length < 7 || inputDNI.value.length > 8) {
+        inputDNI.className = "error";
+        inputDNI.value = "Numero entre 7 y 8 digitos"
+    }
+    else {
+        console.log("Works");
+    }
+}
+
+clearDNI = function () {
+    inputDNI.className = "normal";
+    inputDNI.value = "";
+}
 window.onload = function () {
     //obtain the inputs
     inputName = document.getElementById('name');
@@ -172,4 +186,6 @@ window.onload = function () {
     inputCity.addEventListener("focus", clearCity);
     inputCp.addEventListener("blur", validateCp);
     inputCp.addEventListener("focus", clearCp);
+    inputDNI.addEventListener("blur", validateDNI);
+    inputDNI.addEventListener("focus", clearDNI);
 }
