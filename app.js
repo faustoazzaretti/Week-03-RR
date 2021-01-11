@@ -93,9 +93,9 @@ clearPhone = function () {
 }
 
 validateAdress = function () {
-    if (inputAdress.value.length < 3) {
+    if (inputAdress.value.length < 5) {
         inputAdress.className = "error";
-        inputAdress.value = "Al menos 3 caracteres";
+        inputAdress.value = "Al menos 5 caracteres";
     }
     else {
         console.log('Works');
@@ -105,6 +105,21 @@ validateAdress = function () {
 clearAdress = function () {
     inputAdress.className = "normal";
     inputAdress.value = "";
+}
+
+validateCity = function () {
+    if (inputCity.value.length < 3) {
+        inputCity.className = "error";
+        inputCity.value = "Al menos 3 caracteres";
+    }
+    else {
+        console.log('Works');
+    }
+}
+
+clearCity = function () {
+    inputCity.className = "normal";
+    inputCity.value = "";
 }
 
 window.onload = function () {
@@ -138,4 +153,6 @@ window.onload = function () {
     inputPhone.addEventListener("focus", clearPhone);
     inputAdress.addEventListener("blur", validateAdress);
     inputAdress.addEventListener("focus", clearAdress);
+    inputCity.addEventListener("blur", validateCity);
+    inputCity.addEventListener("focus", clearCity);
 }
