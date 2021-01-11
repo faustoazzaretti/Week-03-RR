@@ -24,6 +24,44 @@ clearEmail = function () {
     intputEmail.value = "";
 }
 
+validatePassword = function () {
+    password = inputPassword.value;
+    var letterNumber = /^[0-9a-zA-Z]+$/;
+    if ((password.match(letterNumber))) {
+        console.log("Works");
+    }
+    else {
+        inputPassword.className = "error";
+        inputPassword.type = "text";
+        inputPassword.value = "Solo letras y numeros";
+    }
+}
+
+clearPassword = function () {
+    inputPassword.className = "normal";
+    inputPassword.value = "";
+    inputPassword.type = "password";
+}
+
+validateRepeatPassword = function () {
+    RepeatPassword = inputRepeatPassoword.value;
+    var letterNumber = /^[0-9a-zA-Z]+$/;
+    if ((RepeatPassword.match(letterNumber))) {
+        console.log("Works");
+    }
+    else {
+        inputRepeatPassoword.className = "error";
+        inputRepeatPassoword.type = "text";
+        inputRepeatPassoword.value = "Solo letras y numeros";
+    }
+}
+
+clearRepeatPassword = function () {
+    inputRepeatPassoword.className = "normal";
+    inputRepeatPassoword.value = "";
+    inputRepeatPassoword.type = "password";
+}
+
 window.onload = function () {
     //obtain the inputs
     inputName = document.getElementById('name');
@@ -45,4 +83,8 @@ window.onload = function () {
     inputName.addEventListener("focus", clearCompleteName);
     intputEmail.addEventListener("blur", validateEmail);
     intputEmail.addEventListener("focus", clearEmail);
+    inputPassword.addEventListener("blur", validatePassword);
+    inputPassword.addEventListener("focus", clearPassword);
+    inputRepeatPassoword.addEventListener("blur", validateRepeatPassword);
+    inputRepeatPassoword.addEventListener("focus", clearRepeatPassword);
 }
