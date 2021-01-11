@@ -122,6 +122,21 @@ clearCity = function () {
     inputCity.value = "";
 }
 
+validateCp = function () {
+    if (inputCp.value.length < 3) {
+        inputCp.className = "error";
+        inputCp.value = "Al menos 3 caracteres";
+    }
+    else {
+        console.log('Works');
+    }
+}
+
+clearCp = function () {
+    inputCp.className = "normal";
+    inputCp.value = "";
+}
+
 window.onload = function () {
     //obtain the inputs
     inputName = document.getElementById('name');
@@ -155,4 +170,6 @@ window.onload = function () {
     inputAdress.addEventListener("focus", clearAdress);
     inputCity.addEventListener("blur", validateCity);
     inputCity.addEventListener("focus", clearCity);
+    inputCp.addEventListener("blur", validateCp);
+    inputCp.addEventListener("focus", clearCp);
 }
