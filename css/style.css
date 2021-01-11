@@ -57,6 +57,12 @@ nav ul li{
     color: white;
 }
 
+nav ul li a{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
 nav ul li:hover{
     font-size: 19px;
     cursor: pointer;
@@ -118,6 +124,11 @@ nav ul li:hover{
     font-weight: bold;
     height: 30px;
     border-radius: 15px;
+}
+
+.content form button a{
+    text-decoration: none;
+    color: white;
 }
 
 .content form button:hover{
