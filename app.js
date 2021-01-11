@@ -77,6 +77,21 @@ clearAge = function () {
     inputAge.value = "";
 }
 
+validatePhone = function () {
+    if (isNaN(inputPhone.value) || inputPhone.value.length < 8) {
+        inputPhone.className = "error";
+        inputPhone.value = "Only numbers and min 7 characters";
+    }
+    else {
+        console.log('Works');
+    }
+}
+
+clearPhone = function () {
+    inputPhone.className = "normal";
+    inputPhone.value = "";
+}
+
 window.onload = function () {
     //obtain the inputs
     inputName = document.getElementById('name');
@@ -104,4 +119,8 @@ window.onload = function () {
     inputRepeatPassoword.addEventListener("focus", clearRepeatPassword);
     inputAge.addEventListener("blur", validateAge);
     inputAge.addEventListener("focus", clearAge);
+    inputPhone.addEventListener("blur", validatePhone);
+    inputPhone.addEventListener("focus", clearPhone);
+    inputAdress.addEventListener("blur", validateAdress);
+    inputAdress.addEventListener("focus", clearAdress);
 }
