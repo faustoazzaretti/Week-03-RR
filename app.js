@@ -1,13 +1,22 @@
 validateName = function () {
-    if (inputName.value.length < 7) {
+    if (inputName.value.length < 6) {
         inputName.className = "error";
-        inputName.value = "Al menos 6 caracteres";
+        inputName.value = "It needs 6 characters.";
+        validatedName = false;
+    }
+    else {
+        validatedName = true;
     }
 }
 
 clearCompleteName = function () {
-    inputName.className = "normal";
-    inputName.value = "";
+    if (validatedName) {
+        console.log('Pass');
+    }
+    else {
+        inputName.className = "normal";
+        inputName.value = "";
+    }
 }
 
 validateEmail = function (valor) {
@@ -15,142 +24,210 @@ validateEmail = function (valor) {
     expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (!expr.test(valor)) {
         intputEmail.className = "error";
-        intputEmail.value = "Formato incorrecto";
+        intputEmail.value = "Incorrect Format";
+        validatedEmail = false;
+    }
+    else {
+        validatedEmail = true;
     }
 }
 
 clearEmail = function () {
-    intputEmail.className = "normal";
-    intputEmail.value = "";
+    if (validatedEmail) {
+        console.log('Pass');
+    }
+    else {
+        intputEmail.className = "normal";
+        intputEmail.value = "";
+    }
 }
 
 validatePassword = function () {
     password = inputPassword.value;
     var letterNumber = /^[0-9a-zA-Z]+$/;
-    if ((password.match(letterNumber))) {
-        console.log("Works");
+    if ((password.match(letterNumber)) && inputPassword.value.length >= 8) {
+        validatedPassword = true;
     }
     else {
         inputPassword.className = "error";
         inputPassword.type = "text";
-        inputPassword.value = "Solo letras y numeros";
+        inputPassword.value = "Minimum 8 characters letters and numbers.";
+        validatedPassword = false;
     }
 }
 
 clearPassword = function () {
-    inputPassword.className = "normal";
-    inputPassword.value = "";
-    inputPassword.type = "password";
+    if (validatedPassword) {
+        console.log('Pass');
+    }
+    else {
+        inputPassword.className = "normal";
+        inputPassword.value = "";
+        inputPassword.type = "password";
+    }
 }
+
 
 validateRepeatPassword = function () {
     RepeatPassword = inputRepeatPassoword.value;
     var letterNumber = /^[0-9a-zA-Z]+$/;
-    if ((RepeatPassword.match(letterNumber))) {
-        console.log("Works");
+    if ((RepeatPassword.match(letterNumber)) && inputRepeatPassoword.value.length >= 8) {
+        validatedRepeatPassword = true;
     }
     else {
         inputRepeatPassoword.className = "error";
         inputRepeatPassoword.type = "text";
-        inputRepeatPassoword.value = "Solo letras y numeros";
+        inputRepeatPassoword.value = "Minimum 8 characters letters and numbers.";
+        validatedRepeatPassword = false;
     }
 }
 
 clearRepeatPassword = function () {
-    inputRepeatPassoword.className = "normal";
-    inputRepeatPassoword.value = "";
-    inputRepeatPassoword.type = "password";
+    if (validatedRepeatPassword) {
+        console.log('Pass');
+    }
+    else {
+        inputRepeatPassoword.className = "normal";
+        inputRepeatPassoword.value = "";
+        inputRepeatPassoword.type = "password";
+    }
 }
 
 validateAge = function () {
     if (inputAge.value < 18 || isNaN(inputAge.value)) {
         inputAge.className = "error";
-        inputAge.value = "Debe ser mayor de 18 anios";
+        inputAge.value = "Over 18 years old.";
+        validatedAge = false;
     }
     else {
-        console.log('Works');
+        validatedAge = true;
     }
 }
 
 clearAge = function () {
-    inputAge.className = "normal";
-    inputAge.value = "";
+    if (validatedAge) {
+        console.log('Pass');
+    }
+    else {
+        inputAge.className = "normal";
+        inputAge.value = "";
+    }
 }
 
 validatePhone = function () {
-    if (isNaN(inputPhone.value) || inputPhone.value.length < 8) {
+    if (isNaN(inputPhone.value) || inputPhone.value.length < 7) {
         inputPhone.className = "error";
         inputPhone.value = "Only numbers and min 7 characters";
+        validatedPhone = false;
     }
     else {
-        console.log('Works');
+        validatedPhone = true;
     }
 }
 
 clearPhone = function () {
-    inputPhone.className = "normal";
-    inputPhone.value = "";
+    if (validatedPhone) {
+        console.log('Pass');
+    }
+    else {
+        inputPhone.className = "normal";
+        inputPhone.value = "";
+    }
 }
 
 validateAdress = function () {
     if (inputAdress.value.length < 5) {
         inputAdress.className = "error";
-        inputAdress.value = "Al menos 5 caracteres";
+        inputAdress.value = "It needs 5 characters";
+        validatedAdress = false;
     }
     else {
-        console.log('Works');
+        validatedAdress = true;
     }
 }
 
 clearAdress = function () {
-    inputAdress.className = "normal";
-    inputAdress.value = "";
+    if (validatedAdress) {
+        console.log('Pass');
+    }
+    else {
+        inputAdress.className = "normal";
+        inputAdress.value = "";
+    }
 }
 
 validateCity = function () {
     if (inputCity.value.length < 3) {
         inputCity.className = "error";
-        inputCity.value = "Al menos 3 caracteres";
+        inputCity.value = "It needs 3 characters";
+        validatedCity = false;
     }
     else {
-        console.log('Works');
+        validatedCity = true;
     }
 }
 
 clearCity = function () {
-    inputCity.className = "normal";
-    inputCity.value = "";
+    if (validatedCity) {
+        console.log('Pass');
+    }
+    else {
+        inputCity.className = "normal";
+        inputCity.value = "";
+    }
 }
 
 validateCp = function () {
     if (inputCp.value.length < 3) {
         inputCp.className = "error";
-        inputCp.value = "Al menos 3 caracteres";
+        inputCp.value = "It needs 3 characters";
+        validatedCp = false;
     }
     else {
-        console.log('Works');
+        validatedCp = true;
     }
 }
 
 clearCp = function () {
-    inputCp.className = "normal";
-    inputCp.value = "";
+    if (validatedCp) {
+        console.log('Pass');
+    }
+    else {
+        inputCp.className = "normal";
+        inputCp.value = "";
+    }
 }
 
 validateDNI = function () {
     if (isNaN(inputDNI.value) || inputDNI.value.length < 7 || inputDNI.value.length > 8) {
         inputDNI.className = "error";
-        inputDNI.value = "Numero entre 7 y 8 digitos"
+        inputDNI.value = "Number between 7 and 8 characters";
+        validatedDNI = false;
     }
     else {
-        console.log("Works");
+        validatedDNI = true;
     }
 }
 
 clearDNI = function () {
-    inputDNI.className = "normal";
-    inputDNI.value = "";
+    if (validatedDNI) {
+        console.log('Pass');
+    }
+    else {
+        inputDNI.className = "normal";
+        inputDNI.value = "";
+    }
 }
+
+sendForm = function () {
+    if (inputPassword.value == inputRepeatPassoword.value) {
+        alert('Sended Form')
+    }
+    else {
+        alert('The passwords needs be the same')
+    }
+}
+
 window.onload = function () {
     //obtain the inputs
     inputName = document.getElementById('name');
@@ -165,7 +242,7 @@ window.onload = function () {
     inputDNI = document.getElementById('dni');
     //obtain the button
     sendButton = document.getElementById('sendButton');
-    sendButton.addEventListener('click', validateName);
+    sendButton.addEventListener('click', sendForm);
 
     //listeners 
     inputName.addEventListener("blur", validateName);
