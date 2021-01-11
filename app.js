@@ -62,6 +62,21 @@ clearRepeatPassword = function () {
     inputRepeatPassoword.type = "password";
 }
 
+validateAge = function () {
+    if (inputAge.value < 18 || isNaN(inputAge.value)) {
+        inputAge.className = "error";
+        inputAge.value = "Debe ser mayor de 18 anios";
+    }
+    else {
+        console.log('Works');
+    }
+}
+
+clearAge = function () {
+    inputAge.className = "normal";
+    inputAge.value = "";
+}
+
 window.onload = function () {
     //obtain the inputs
     inputName = document.getElementById('name');
@@ -87,4 +102,6 @@ window.onload = function () {
     inputPassword.addEventListener("focus", clearPassword);
     inputRepeatPassoword.addEventListener("blur", validateRepeatPassword);
     inputRepeatPassoword.addEventListener("focus", clearRepeatPassword);
+    inputAge.addEventListener("blur", validateAge);
+    inputAge.addEventListener("focus", clearAge);
 }
