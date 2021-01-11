@@ -92,6 +92,21 @@ clearPhone = function () {
     inputPhone.value = "";
 }
 
+validateAdress = function () {
+    if (inputAdress.value.length < 3) {
+        inputAdress.className = "error";
+        inputAdress.value = "Al menos 3 caracteres";
+    }
+    else {
+        console.log('Works');
+    }
+}
+
+clearAdress = function () {
+    inputAdress.className = "normal";
+    inputAdress.value = "";
+}
+
 window.onload = function () {
     //obtain the inputs
     inputName = document.getElementById('name');
