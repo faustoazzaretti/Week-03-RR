@@ -1,20 +1,33 @@
 validateName = function () {
-    if (inputName.value < 7) {
-        alert('El nombre completo debe tener al menos 6 letras.')
+    if (inputName.value.length < 7) {
+        inputName.className = "error";
+        inputName.value = "Al menos 6 caracteres";
     }
 }
 
-validateEmail = function () {
-    if (!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(valor))) {
-        console.log('Debe ingresar un email correcto');
+clearCompleteName = function () {
+    inputName.className = "normal";
+    inputName.value = "";
+}
+
+validateEmail = function (valor) {
+    valor = document.getElementById('email').value;
+    expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!expr.test(valor)) {
+        intputEmail.className = "error";
+        intputEmail.value = "Formato incorrecto";
     }
+}
+
+clearEmail = function () {
+    intputEmail.className = "normal";
+    intputEmail.value = "";
 }
 
 window.onload = function () {
     //obtain the inputs
     inputName = document.getElementById('name');
     intputEmail = document.getElementById('email');
-    valor = document.getElementById('email').value;
     inputPassword = document.getElementById('password');
     inputRepeatPassoword = document.getElementById('repeatPassword');
     inputAge = document.getElementById('age');
@@ -29,5 +42,7 @@ window.onload = function () {
 
     //listeners 
     inputName.addEventListener("blur", validateName);
+    inputName.addEventListener("focus", clearCompleteName);
     intputEmail.addEventListener("blur", validateEmail);
+    intputEmail.addEventListener("focus", clearEmail);
 }

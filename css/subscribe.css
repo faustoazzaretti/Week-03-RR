@@ -47,6 +47,14 @@ form button:hover{
     cursor: pointer;
 }
 
+.error{
+    color: red;
+}
+
+.normal{
+    color: black;
+}
+
 @media(max-width:768px){
     .wrapper{
         text-align: center;
